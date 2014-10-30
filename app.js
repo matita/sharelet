@@ -30,7 +30,8 @@
 			{ name: 'Shorten with bit.ly', icon: 'http://g.etfv.co/http://bitly.com', tpl: 'https://bitly.com/a/bitmarklet?u={url}' },
 			{ name: 'Add to URLi.st', icon: 'http://urli.st/favicon.ico', tpl: 'http://urli.st/bookmarklet/add?url={url}&title={title}' },
 			{ name: 'Download YouTube video', icon: 'http://deturl.com/favicon.ico', tpl: 'http://deturl.com/{url}' },
-			{ name: 'Post to Reddit', icon: 'http://reddit.com/favicon.ico', tpl: 'http://www.reddit.com/submit?url={url}&title={title}' }
+			{ name: 'Post to Reddit', icon: 'http://reddit.com/favicon.ico', tpl: 'http://www.reddit.com/submit?url={url}&title={title}' },
+			{ name: 'Pin on Pinterest', icon: 'http:://www.pinterest.com/favicon.ico', tpl: 'http://www.pinterest.com/pin/create/button/?url={url}&description={title}' }
 		];
 		
 		
