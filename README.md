@@ -12,3 +12,8 @@ I love Android Intents, meaning I can open a resource in every app that supports
 Long story short, to use all the services I daily use to share/save/whatever links I would have a lot of extensions and bookmarklets installed on the browser, meaning space on my pc and resource consumption for every page visited (since most of the extensions do a lot of work every time you navigate through the web).
 
 What I needed was a single bookmarklet (not an extension) that could give me a rapid access to all the actions that I could do with a web page.
+
+## Upcoming features
+* custom reordering of intents
+* adding custom intents
+* filtering of intents based on url RegExp
