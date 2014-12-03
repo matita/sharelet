@@ -13,7 +13,12 @@ Long story short, to use all the services I daily use to share/save/whatever lin
 
 What I needed was a single bookmarklet (not an extension) that could give me a rapid access to all the actions that I could do with a web page.
 
-## Upcoming features
+## To Do
 * custom reordering of intents
 * adding custom intents
 * filtering of intents based on url RegExp
+* create parametric intents (like *email to someone specific*, or *create post on wordpress X or wordpress Y*)
+* QR encoded url in the "current url" header
+* switch to Vanilla Javascript (instead of AngularJS)?
+* embedding in web pages
+  * media query on height to show just the icons horizontally
