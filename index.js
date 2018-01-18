@@ -16,8 +16,8 @@
         { id: 'pn', name: 'Pinterest', icon: 'images/pinterest.svg', tpl: 'http://www.pinterest.com/pin/create/button/?url={url}&description={title}' },
         { id: 'Pk', name: 'Pocket', icon: 'images/pocket.svg', tpl: 'http://getpocket.com/edit?url={url}' },
         { id: 'bf', name: 'Buffer', icon: 'images/buffer2.svg', tpl: 'http://bufferapp.com/add?url={url}&text={title}' },
-        { id: 'em', name: 'Email', icon: 'images/email.svg', tpl: 'mailto:?subject={title}&body={url}' },
-        //{ id: 'yt', name: 'Download YouTube video', icon: 'http://deturl.com/favicon.ico', tpl: 'http://deturl.com/{url}' },
+        { id: 'li', name: 'LinkedIn', icon: 'images/linkedin.svg', tpl: 'http://www.linkedin.com/shareArticle?url={url}&title={title}&summary=&source=' },
+        { id: 'em', name: 'Email', icon: 'images/email.svg', tpl: 'mailto:?subject={title}&body={url}' }
     ]
 
     document.getElementById('main').innerHTML = 
