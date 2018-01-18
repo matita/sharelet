@@ -13,6 +13,7 @@
         { id: 'gp', name: 'Google Plus', icon: 'images/google-plus.svg', tpl: 'https://plus.google.com/share?url={url}' },
         { id: 'rd', name: 'Reddit', icon: 'images/reddit.svg', tpl: 'http://www.reddit.com/submit?url={url}&title={title}' },
         { id: 'tg', name: 'Telegram', icon: 'images/telegram.svg', tpl: 'https://telegram.me/share/url?url={url}&text=' },
+        { id: 'pn', name: 'Pinterest', icon: 'images/pinterest.svg', tpl: 'http://www.pinterest.com/pin/create/button/?url={url}&description={title}' },
         { id: 'Pk', name: 'Pocket', icon: 'images/pocket.svg', tpl: 'http://getpocket.com/edit?url={url}' },
         { id: 'bf', name: 'Buffer', icon: 'images/buffer2.svg', tpl: 'http://bufferapp.com/add?url={url}&text={title}' },
         { id: 'em', name: 'Email', icon: 'images/email.svg', tpl: 'mailto:?subject={title}&body={url}' },
