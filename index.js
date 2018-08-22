@@ -44,7 +44,7 @@
     function bookmarklet() {
         return [
             '<div class="bookmarklet-wrapper">',
-                '<a class="bookmarklet" href="javascript:(function() { window.open(\'http://matita.github.io/sharelet/?v=0.1&url=\' + encodeURIComponent(window.location.href) + \'&title=\' + encodeURIComponent(document.title), \'\', \'width=865,height=525\'); })()">≺ Sharelet!</a>',
+                '<a class="bookmarklet" href="javascript:(function() { window.open(\'https://matita.github.io/sharelet/?v=0.1&url=\' + encodeURIComponent(window.location.href) + \'&title=\' + encodeURIComponent(document.title), \'\', \'width=865,height=525\'); })()">≺ Sharelet!</a>',
                 '<span class="bookmarklet-desc">Drag it to the bookmarks bar and click it on any web page</span>',
             '</div>'
         ].join('');
