@@ -13,6 +13,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     background: #fff;
+    border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0,0,0,.4);
 }
 
@@ -37,7 +38,6 @@ footer a {
 
 .link {
     padding: 2em;
-    background-color: #fff;
     border-bottom: 1px solid #eee;
 }
 
@@ -80,5 +80,48 @@ footer a {
 .share-btn-img {
     width: 40px;
     height: 40px;
+}
+
+.bookmarklet-wrapper {
+    padding: 2em;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.bookmarklet {
+    margin-right: 1em;
+    text-decoration: none;
+    background: #555;
+    color: #f4f4f4;
+    padding: .5em 1em;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.2);
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.bookmarklet:active { 
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.bookmarklet-desc {
+    display: inline-block;
+}
+
+.shake {
+    animation: shake .2s;
+    animation-iteration-count: 2;
+}
+
+@keyframes shake {
+    0%  { transform: translate3d(-3px, 0 ,0); }
+    20% { transform: translate3d(4px, 0 ,0); }
+    40% { transform: translate3d(-4px, 0 ,0); }
+    60% { transform: translate3d(5px, 0 ,0); }
+    80% { transform: translate3d(-4px, 0 ,0); }
 }
 

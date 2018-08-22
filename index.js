@@ -4,7 +4,7 @@
 
     var link = {
         url: params.url || location.href,
-        title: params.title || (!params.url && document.title) || ''
+        title: params.title || params.url || document.title || ''
     };
 
     var intents = [
@@ -20,43 +20,71 @@
         { id: 'em', name: 'Email', icon: 'images/email.svg', tpl: 'mailto:?subject={title}&body={url}' }
     ]
 
-    document.getElementById('main').innerHTML = 
-        linkView(link) + 
-        sharer({ link: link, intents: intents });
+    document.getElementById('main').innerHTML = [
+        linkView(link),
+        (!!params.url ? '' : bookmarklet()),
+        sharer({ link: link, intents: intents })
+    ].join('');
+
+    var bookmarkletLink = document.querySelector('.bookmarklet');
+    if (bookmarkletLink)
+        bookmarkletLink.onclick = preventClickBookmarklet;
 
     /** views **/
 
     function linkView(props) {
-        return '<div class="link">' +
-            '<h2 class="link-title">' + props.title + '</h2>' +
-            '<p class="link-url">' + props.url + '</p>' +
-        '</div>';
+        return [
+            '<div class="link">',
+                '<h2 class="link-title">', props.title, '</h2>',
+                '<p class="link-url">', props.url, '</p>',
+            '</div>'
+        ].join('');
+    }
+
+    function bookmarklet() {
+        return [
+            '<div class="bookmarklet-wrapper">',
+                '<a class="bookmarklet" href="javascript:(function() { window.open(\'http://matita.github.io/sharelet/?v=0.1&url=\' + encodeURIComponent(window.location.href) + \'&title=\' + encodeURIComponent(document.title), \'\', \'width=865,height=525\'); })()">≺ Sharelet!</a>',
+                '<span class="bookmarklet-desc">Drag it to the bookmarks bar and click me on any web page</span>',
+            '</div>'
+        ].join('');
     }
 
     function sharer(props) {
-        return '<div class="sharer">' +
-            '<h2 class="sharer-title">Share</h2>' +
-            props.intents.map(function(intent) { 
-                return shareBtn({ 
-                    id: intent.id, 
-                    name: intent.name, 
-                    url: tmpl(intent.tpl, props.link),
-                    icon: intent.icon
-                });
-            }).join('') +
-        '</div>';
+        return [
+            '<div class="sharer">',
+                '<h2 class="sharer-title">Share on</h2>',
+                props.intents.map(function(intent) { 
+                    return shareBtn({ 
+                        id: intent.id, 
+                        name: intent.name, 
+                        url: tmpl(intent.tpl, props.link),
+                        icon: intent.icon
+                    });
+                }).join(''),
+            '</div>'
+            ].join('');
     }
 
     function shareBtn(props) {
-        return '<a class="share-btn share-btn-' + props.id + '" href="' + props.url + '" title="' + props.name + '">' +
-            '<img class="share-btn-img" src="' + props.icon + '">' +
-        '</a>';
+        return ['<a class="share-btn share-btn-', props.id, '" href="', props.url, '" title="', props.name, '">',
+            '<img class="share-btn-img" src="', props.icon, '">',
+        '</a>'].join('');
     }
 
     function tmpl(text, params) {
         return text.replace(/\{(\w+)\}/g, function (match, key) {
             return encodeURIComponent(params[key]);
         });
+    }
+
+    function preventClickBookmarklet(e) {
+        e.preventDefault();
+        var desc = document.querySelector('.bookmarklet-desc');
+        desc.classList.add('shake');
+        setTimeout(function () {
+            desc.classList.remove('shake');
+        }, 1200);
     }
 
     function buildUrl(baseUrl, params) {
