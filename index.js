@@ -36,8 +36,13 @@
   function linkView(props) {
     return (
       '<div class="link">' +
-        '<h2 class="link-title">' + props.title + '</h2>' +
-        '<p class="link-url">' + props.url + '</p>' +
+        '<div class="link-qr">' +
+          qr(props.url) +
+        '</div>' +
+        '<div class="link-data">' +
+          '<h2 class="link-title">' + props.title + '</h2>' +
+          '<p class="link-url">' + props.url + '</p>' +
+        '</div>' +
       '</div>'
     );
   }
@@ -68,6 +73,12 @@
         '<img class="share-btn-img" src="' + intent.icon + '">' +
       '</a>'
     );
+  }
+
+  function qr(text) {
+    return text
+      ? '<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + encodeURIComponent(text) + '" width="200" height="200">'
+      : '';
   }
 
   function tmpl(text, params) {

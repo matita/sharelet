@@ -1,127 +1,133 @@
 html,
 body {
-    padding: 1em;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ccc;
+  padding: 1em;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ccc;
 }
 
 * { box-sizing: border-box; }
 
 main {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.4);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.4);
 }
 
 footer {
-    color: #555;
-    font-size: .6em;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  color: #555;
+  font-size: .6em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .icons-credits {
-    padding-top: 1em;
-    text-align: center;
+  padding-top: 1em;
+  text-align: center;
 }
 
 footer a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid;
 }
 
 .link {
-    padding: 2em;
-    border-bottom: 1px solid #eee;
+  padding: 2em;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.link-data {
+  overflow: hidden;
 }
 
 .link-title {
-    margin: 0;
-    font-weight: normal;
+  margin: 0;
+  font-weight: normal;
 }
 
 .link-url {
-    margin: 0;
-    margin-top: .5em;
-    color: #999;
-    font-size: .7em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  margin: 0;
+  margin-top: .5em;
+  color: #999;
+  font-size: .7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sharer {
-    padding: 2em;
-    padding-top: 1em;
+  padding: 2em;
+  padding-top: 1em;
 }
 
 .sharer-title {
-    color: #999;
-    margin: 0;
-    margin-bottom: 1em;
-    font-weight: normal;
-    font-size: 1em;
+  color: #999;
+  margin: 0;
+  margin-bottom: 1em;
+  font-weight: normal;
+  font-size: 1em;
 }
 
 .share-btn {
-    display: inline-block;
-    background-color: #fff;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+  display: inline-block;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .share-btn-img {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 .bookmarklet-wrapper {
-    padding: 2em;
-    border-bottom: 1px solid #eee;
-    color: #555;
+  padding: 2em;
+  border-bottom: 1px solid #eee;
+  color: #555;
 }
 
 .bookmarklet {
-    margin-right: 1em;
-    text-decoration: none;
-    background: #555;
-    color: #f4f4f4;
-    padding: .5em 1em;
-    border-radius: 4px;
-    box-shadow: 0 3px 3px rgba(0,0,0,.2);
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
+  margin-right: 1em;
+  text-decoration: none;
+  background: #555;
+  color: #f4f4f4;
+  padding: .5em 1em;
+  border-radius: 4px;
+  box-shadow: 0 3px 3px rgba(0,0,0,.2);
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
 
-.bookmarklet:active { 
-    cursor: grabbing;
-    cursor: -moz-grabbing;
-    cursor: -webkit-grabbing;
+.bookmarklet:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .bookmarklet-desc {
-    display: inline-block;
+  display: inline-block;
 }
 
 .shake {
-    animation: shake .2s;
-    animation-iteration-count: 2;
+  animation: shake .2s;
+  animation-iteration-count: 2;
 }
 
 @keyframes shake {
-    0%  { transform: translate3d(-3px, 0 ,0); }
-    20% { transform: translate3d(4px, 0 ,0); }
-    40% { transform: translate3d(-4px, 0 ,0); }
-    60% { transform: translate3d(5px, 0 ,0); }
-    80% { transform: translate3d(-4px, 0 ,0); }
+  0%  { transform: translate3d(-3px, 0 ,0); }
+  20% { transform: translate3d(4px, 0 ,0); }
+  40% { transform: translate3d(-4px, 0 ,0); }
+  60% { transform: translate3d(5px, 0 ,0); }
+  80% { transform: translate3d(-4px, 0 ,0); }
 }
 
