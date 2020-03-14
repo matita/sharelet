@@ -13,6 +13,22 @@ Long story short, to use all the services I daily use to share/save/whatever lin
 
 What I needed was a single bookmarklet (not an extension) that could give me a rapid access to all the actions that I could do with a web page.
 
+## Features
+* Sharing via
+  * Facebook
+  * Twitter
+  * Whatsapp
+  * Telegram
+  * Microsoft Teams
+  * Reddit
+  * Pinterest
+  * Pocket
+  * Buffer
+  * LinkedIn
+  * Email
+* QR to open the link with the phone
+* Done with Vanilla JS
+
 ## To Do
 * custom reordering of intents
 * adding custom intents
@@ -20,8 +36,3 @@ What I needed was a single bookmarklet (not an extension) that could give me a r
 * create parametric intents (like *email to someone specific*, or *create post on wordpress X or wordpress Y*)
 * embedding in web pages
   * media query on height to show just the icons horizontally
-
-## Done
-* QR encoded url in the "current url" header
-* switch to Vanilla Javascript (instead of AngularJS)?
-
