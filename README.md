@@ -1,6 +1,6 @@
 Sharelet
 ========
-See it [here](http://matita.github.io/sharelet)
+See it here: [Sharelet](http://matita.github.io/sharelet)
 
 ## Mission
 I love Android Intents, meaning I can open a resource in every app that supports that kind of resource, but I miss this feature on the desktop browser.
@@ -18,7 +18,10 @@ What I needed was a single bookmarklet (not an extension) that could give me a r
 * adding custom intents
 * filtering of intents based on url RegExp
 * create parametric intents (like *email to someone specific*, or *create post on wordpress X or wordpress Y*)
-* QR encoded url in the "current url" header
-* switch to Vanilla Javascript (instead of AngularJS)?
 * embedding in web pages
   * media query on height to show just the icons horizontally
+
+## Done
+* QR encoded url in the "current url" header
+* switch to Vanilla Javascript (instead of AngularJS)?
+
