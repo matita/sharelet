@@ -36,12 +36,12 @@
   function linkView(props) {
     return (
       '<div class="link">' +
-        '<div class="link-qr">' +
-          qr(props.url) +
-        '</div>' +
         '<div class="link-data">' +
           '<h2 class="link-title">' + props.title + '</h2>' +
           '<p class="link-url">' + props.url + '</p>' +
+        '</div>' +
+        '<div class="link-qr">' +
+          qr(props.url) +
         '</div>' +
       '</div>'
     );

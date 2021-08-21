@@ -3,7 +3,6 @@ body {
   padding: 1em;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #ccc;
 }
 
 * { box-sizing: border-box; }
@@ -14,7 +13,6 @@ main {
   margin-right: auto;
   background: #fff;
   border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.4);
 }
 
 footer {
@@ -45,6 +43,7 @@ footer a {
 
 .link-data {
   overflow: hidden;
+  flex-grow: 1;
 }
 
 .link-title {
