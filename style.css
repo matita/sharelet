@@ -8,7 +8,7 @@ body {
 * { box-sizing: border-box; }
 
 main {
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   background: #fff;
@@ -75,16 +75,38 @@ footer a {
 }
 
 .share-btn {
-  display: inline-block;
   background-color: #fff;
-  width: 40px;
+  color: #555;
+  display: inline-block;
+  font-size: 30px;
   height: 40px;
   margin-right: 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 40px;
 }
 
 .share-btn-img {
   width: 40px;
   height: 40px;
+}
+
+.share-btn-md:after {
+  bottom: 0;
+  content: 'MD';
+  position: absolute;
+  right: 0;
+  font-size: 10px;;
+}
+
+.share-btn-fl:after {
+  bottom: 0;
+  content: '</>';
+  position: absolute;
+  right: 0;
+  font-size: 10px;;
 }
 
 .bookmarklet-wrapper {

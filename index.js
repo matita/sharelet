@@ -8,6 +8,8 @@
   };
 
   var intents = [
+    { id: 'md', name: 'Copy Markdown Link', icon: '🔗', tpl: 'javascript:copy(\'[{title}]({url})\')' },
+    { id: 'fl', name: 'Copy Formatted Link', icon: '🔗', tpl: 'javascript:copy(\'&lt;a href=&quot;{url}&quot;&gt;{title}&lt;/a&gt;\')' },
     { id: 'fb', name: 'Facebook', icon: 'images/facebook.svg', tpl: 'http://www.facebook.com/sharer.php?u={url}' },
     { id: 'tw', name: 'Twitter', icon: 'images/twitter.svg', tpl: 'https://twitter.com/intent/tweet?url={url}&text={title}' },
     { id: 'wa', name: 'Whatsapp', icon: 'images/whatsapp.svg', tpl: 'https://web.whatsapp.com/send?phone&text={title}+{url}&source&data' },
@@ -59,7 +61,6 @@
   function sharer(props) {
     return (
       '<div class="sharer">' +
-        '<h2 class="sharer-title">Share on</h2>' +
         props.intents.map(shareBtn.bind(null, props.link)).join('') +
       '</div>'
     );
@@ -70,7 +71,10 @@
 
     return (
       '<a class="share-btn share-btn-' + intent.id + '" href="' + url + '" title="' + intent.name + '">' +
-        '<img class="share-btn-img" src="' + intent.icon + '">' +
+        (/\.\w{3}$/.test(intent.icon)
+          ? '<img class="share-btn-img" src="' + intent.icon + '">'
+          : '<span class="share-btn-icon">' + intent.icon + '</span>'
+        ) +
       '</a>'
     );
   }
@@ -102,5 +106,36 @@
       .map(function(e) { return e.split('='); })
       .reduce(function(p, e) { p[decodeURIComponent(e[0])] = decodeURIComponent(e[1]); return p; }, {});
   }
+
+  function copyToClipboard(str) {
+    var el = document.createElement("div");
+    el.contentEditable = true;
+    el.innerHTML = str;
+    el.setAttribute("readonly", "");
+    el.style.position = "absolute";
+    el.style.left = "-9999px";
+    document.body.appendChild(el);
+    var range;
+    var selection;
+    if (document.body.createTextRange) {
+      range = document.body.createTextRange();
+      range.moveToElement(el);
+      range.select();
+    } else if (window.getSelection) {
+      selection = window.getSelection();
+      range = document.createRange();
+      range.selectNodeContents(el);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    document.body.removeChild(el);
+  }
+
+  window.copy = function(text) {
+    copyToClipboard(text);
+    setTimeout(() => window.close(),1000)
+  };
 
 })();
