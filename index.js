@@ -80,14 +80,15 @@
   }
 
   function qr(text) {
-    return text
-      ? '<img src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + encodeURIComponent(text) + '" width="200" height="200">'
-      : '';
+    return '';
   }
 
   function tmpl(text, params) {
     return text.replace(/\{(\w+)\}/g, function (match, key) {
-      return encodeURIComponent(params[key]);
+      const val = (params[key] || '')
+        .replace(/'/g, '\\\'');
+
+      return encodeURIComponent(val);
     });
   }
 
